@@ -1,0 +1,29 @@
+.blueColor {
+  color: #0000ff;
+}
+.greenColor {
+  color: #4f8000;
+}
+.pinkColor {
+  color: #fa8072;
+}
+label {
+  font-weight: bold;
+}
+input[type="submit reset"] {
+  width: 150px;
+  height: 25px;
+}
+input[type="text"] {
+  width: 200px;
+  height: 25px;
+}
+body {
+  width: 800px;
+}
+header > h1 {
+  text-align: center;
+}
+legend {
+  font-weight: bold;
+}
