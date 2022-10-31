@@ -7,6 +7,10 @@
 .pinkColor {
   color: #fa8072;
 }
+.error {
+  font-weight: bold;
+  color: white;
+}
 label {
   font-weight: bold;
 }
@@ -18,12 +22,24 @@ input[type="text"] {
   width: 200px;
   height: 25px;
 }
-body {
+input[type="number"] {
+  width: 200px;
+  height: 25px;
+}
+header,
+main {
   width: 800px;
+  margin: auto;
 }
 header > h1 {
   text-align: center;
 }
 legend {
   font-weight: bold;
+}
+fieldset {
+  border: 1px solid white;
+}
+body {
+  background-color: #fa8072;
 }
