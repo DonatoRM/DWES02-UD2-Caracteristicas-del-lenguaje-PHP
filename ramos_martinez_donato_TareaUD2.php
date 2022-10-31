@@ -67,7 +67,7 @@
         echo "<legend>Datos Agenda</legend>";
         echo "<ul>";
         foreach ($phoneBook as $key => $value) {
-          print "<li><span class=\"key\">$key</span><span class=\"value\">$value</span></li>";
+          print "<li><div class=\"key blueColor\">$key</div><div class=\"value blueColor\">$value</div></li>";
         }
         echo "</ul>";
         echo "</fieldset>";
@@ -88,7 +88,7 @@
         "\" target=\"_self\">";
       echo "<fieldset>";
       echo "<legend>Vaciar Agenda</legend>";
-      echo "<button type=\"submit\" class=\"pinkColor\" name=\"limpiar\" value=\"1\">Vaciar</button>";
+      echo "<button type=\"submit\" class=\"pinkColor emptyButton\" name=\"limpiar\" value=\"1\">Vaciar</button>";
       echo "</fieldset>";
       echo "</form>";
     }
@@ -146,25 +146,23 @@
         <form name="formNewContact" method="post" action="<?php $_SERVER["PHP_SELF"]; ?>" target="_self">
           <fieldset>
             <legend>Nuevo Contacto</legend>
-            <p>
-              <label class="blueColor" for="idName" tabindex="1">Nombre:</label>
+            <p id="fileName">
+              <label class="blueColor" id="lblName" for="idName" tabindex="1">Nombre:</label>
               <input type="text" name="name" id="idName" autofocus />
             </p>
-            <p>
-              <label class="blueColor" for="idPhone" tabindex="2">Teléfono:</label>
+            <p id="filePhone">
+              <label class="blueColor" id="lblPhone" for="idPhone" tabindex="2">Teléfono:</label>
               <input type="text" name="phone" id="idPhone" />
             </p>
-             /* Dentro del formulario 'formNewContact' insertamos un bucle 'foreach()' en cuyo interior
+              <!-- Dentro del formulario 'formNewContact' insertamos un bucle 'foreach()' en cuyo interior
               situamos un control 'input:hidden' para, conseguir con esto que almacene en la URL de 
-              nuestra aplicación los datos del array '$phoneBook' (tanto sus claves como sus valores)
-              */<?php
-
-foreach ($phoneBook as $key => $value) {
-              echo "<input type='hidden' name='phoneBook[$key]' value='$value' />";
-            } ?>
+              nuestra aplicación los datos del array '$phoneBook' (tanto sus claves como sus valores) -->
+              <?php foreach ($phoneBook as $key => $value) {
+                echo "<input type='hidden' name='phoneBook[$key]' value='$value' />";
+              } ?>
             <p>
-              <input class="blueColor" type="submit" name="add" value="Añadir Contacto" />
-              <input class="greenColor" type="reset" name="reset" value="Limpiar Campos" />
+              <input class="blueColor buttonSize" type="submit" name="add" value="Añadir Contacto" />
+              <input class="greenColor buttonSize" type="reset" name="reset" value="Limpiar Campos" />
             </p>
           </fieldset>
         </form>
